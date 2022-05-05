@@ -4,15 +4,132 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@drawable/fondo"
+    tools:context="MainActivity">
+
+
+    <EditText
+
+        android:id="@+id/etUsuario"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="300sp"
+        android:layout_height="50sp"
+        android:layout_marginTop="5dp"
+        android:drawableLeft="@drawable/icon_correo"
+        android:hint="  Email"
+        android:inputType="textEmailAddress"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMensaje" />
+
+    <EditText
+        android:id="@+id/etContraseña"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="300sp"
+        android:layout_height="50sp"
+        android:layout_marginTop="4dp"
+        android:drawableLeft="@drawable/icon_candado"
+        android:hint="  Contraseña"
+        android:inputType="textPassword"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etUsuario" />
+
+    <Button
+        android:id="@+id/btIniciar"
+        android:layout_width="250sp"
+        android:layout_height="48dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/boton_blanco"
+        android:onClick="Iniciar"
+        android:text="Iniciar"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etContraseña" />
+
+    <Button
+        android:id="@+id/btRegistrar"
+        android:layout_width="250sp"
+        android:layout_height="48sp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/boton_blanco"
+        android:onClick="Registrar"
+        android:text="Registrar"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btIniciar"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/tvMensaje"
+        android:layout_width="300sp"
+        android:layout_height="30sp"
+        android:layout_marginTop="8dp"
+        android:textColor="#EB1C0D"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="150dp"
+        android:layout_height="190dp"
+        android:layout_marginTop="76dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/login" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="192dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="120dp"
+        android:text="Tambien puedes visitarnos en "
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btRegistrar" />
+
+    <TextView
+        android:id="@+id/neuron"
+        android:layout_width="124dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="92dp"
+        android:text="Fundación Neuron"
+        android:textColor="#052AF5"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.181"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/btRegistrar" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btRegistrar"
+        app:srcCompat="@drawable/logowhite" />
 </androidx.constraintlayout.widget.ConstraintLayout>

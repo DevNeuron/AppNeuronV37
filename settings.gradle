@@ -10,7 +10,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+
     }
 }
-rootProject.name = "Prueba"
+rootProject.name = "AppNeuronV4"
 include ':app'
