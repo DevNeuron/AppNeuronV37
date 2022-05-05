@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "692942594212",
+    "project_id": "pruebalogin-9578d",
+    "storage_bucket": "pruebalogin-9578d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:692942594212:android:7cf02e5dddc8bb3cbe0631",
+        "android_client_info": {
+          "package_name": "com.mispeliculas.pruebalogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "692942594212-3uj4467mh4l595jajo3hi7oeqo22g2u1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdMPkHxrAVh08rWHWZWB5Z9C7Zwxum1LU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "692942594212-3uj4467mh4l595jajo3hi7oeqo22g2u1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
