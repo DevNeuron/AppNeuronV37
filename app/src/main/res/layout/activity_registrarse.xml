@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondodos"
-    tools:context=".Registrarse">
+    android:background="@drawable/fondo"
+    tools:context=".InicioRegistro">
 
 
     <EditText
@@ -39,6 +39,22 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etApellidos" />
+
+    <EditText
+        android:id="@+id/etCorreo2"
+        android:layout_width="250sp"
+        android:layout_height="50sp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="Repita el correo"
+        android:inputType="textEmailAddress"
+        android:minHeight="48dp"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etCorreo" />
 
     <EditText
         android:id="@+id/etMiContraseña"
@@ -90,10 +106,11 @@
         android:id="@+id/registrar"
         android:layout_width="200sp"
         android:layout_height="50sp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/boton_custom"
         android:onClick="Registrar"
         android:text="Continue el Registro"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -113,14 +130,14 @@
         android:id="@+id/etTelefono"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="70dp"
         android:ems="10"
         android:hint="Teléfono"
         android:inputType="phone"
         android:textColor="#000000"
         android:textColorHint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etCorreo" />
 

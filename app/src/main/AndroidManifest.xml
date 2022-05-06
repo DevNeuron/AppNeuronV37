@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
+            android:name=".PreguntasRegistro"
+            android:exported="false" />
+        <activity
             android:name=".ModificarCita"
             android:exported="false" />
         <activity
@@ -27,7 +30,7 @@
             android:name=".HomeUsuario"
             android:exported="false" />
         <activity
-            android:name=".Registrarse"
+            android:name=".InicioRegistro"
             android:exported="false" />
         <activity
             android:name=".Splash"
