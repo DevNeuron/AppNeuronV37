@@ -73,8 +73,6 @@ public class Cita extends AppCompatActivity {
 
                 Toast.makeText(Cita.this, id, Toast.LENGTH_SHORT).show();
 
-
-
                 etCita.setText(fecha);
 
             }
