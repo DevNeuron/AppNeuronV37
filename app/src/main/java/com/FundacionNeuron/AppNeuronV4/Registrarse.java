@@ -11,9 +11,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class Registrarse extends AppCompatActivity {
@@ -22,6 +29,9 @@ public class Registrarse extends AppCompatActivity {
     TextView mensajeError;
     // FireBase
     FirebaseAuth mAuth;
+
+    //Base de datos
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 
     @Override
@@ -41,13 +51,38 @@ public class Registrarse extends AppCompatActivity {
 
     public void Registrar(View view){
 
+        // Base de datos
+         db = FirebaseFirestore.getInstance();
+         //Autentificacion con correo y contraseña
+         mAuth = FirebaseAuth.getInstance();
+
         String nombre = etNombre.getText().toString();
         String apellidos = etApellidos.getText().toString();
         String correo = etCorreo.getText().toString();
         String contraseña = etMiContraseña.getText().toString();
         String contraseña2 = etMiContraseña2.getText().toString();
 
-        mAuth = FirebaseAuth.getInstance();
+        //Mapa para guardar una coleccion de datos en la base de datos
+        Map<String, Object> user = new HashMap<>();
+        user.put("Nombre", nombre);
+        user.put("Apellidos", apellidos);
+        user.put("Correo", correo);
+        user.put("Contraseña", contraseña);
+        user.put("ContraseñaDos", contraseña2);
+
+        db.collection("user")
+                .add(user)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Toast.makeText(Registrarse.this, "sE HAN GUARDADO SUS DATOS CORRECTAMENTE", Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(Registrarse.this, "Error", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         if(nombre.isEmpty() && apellidos.isEmpty() && correo.isEmpty() && contraseña.isEmpty()){
             mensajeError.setText("Debes rellenar todos los campos");

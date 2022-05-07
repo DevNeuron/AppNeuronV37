@@ -91,7 +91,7 @@
         android:layout_width="200sp"
         android:layout_height="50sp"
         android:layout_marginTop="50dp"
-        android:background="@drawable/boton_custom"
+        android:background="@drawable/boton_blanco"
         android:onClick="Registrar"
         android:text="Continue el Registro"
         app:layout_constraintEnd_toEndOf="parent"

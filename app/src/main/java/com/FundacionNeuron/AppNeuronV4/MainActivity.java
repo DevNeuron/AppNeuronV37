@@ -29,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
     EditText etUsuario, etContraseña;
     TextView tvMensaje;
-    Button btIniciar, btRegistrar;
-    TextView neuron;
+    Button btIniciar;
+    TextView neuron, btRegistrar;
     ImageView ibFace, ibInsta, IbTwit;
     private FirebaseAuth mAuth;
     //id pruebalogin-9578d fire base
@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     int REQUEST_CODE = 200;
 
     // Hola carlos
+
 
     //probando comentario para git commit mas push
 
@@ -53,10 +54,6 @@ public class MainActivity extends AppCompatActivity {
         btIniciar = findViewById(R.id.btIniciar);
         btRegistrar = findViewById(R.id.btRegistrar);
         neuron = findViewById(R.id.neuron);
-        ImageView ibFace = (ImageView) findViewById(R.id.ibFace);
-        ImageView ibInsta = (ImageView) findViewById(R.id.ibInsta);
-        ImageView ibTwit = (ImageView) findViewById(R.id.ibTwit);
-        VerificarPermisos();
 
         neuron.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,45 +65,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-       /* ibFace.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String url = "https://www.facebook.com/fundacionneuron";
 
-                Uri link = Uri.parse(url);
-                Intent i = new Intent(Intent.ACTION_VIEW, link);
-                startActivity(i);
-            }
-        });
-        ibInsta.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String url = "https://www.instagram.com/fundacionneuron/";
-
-                Uri link = Uri.parse(url);
-                Intent i = new Intent(Intent.ACTION_VIEW, link);
-                startActivity(i);
-            }
-        });
-*/
     }
-
-
-    @RequiresApi(api = Build.VERSION_CODES.M)
-    private void VerificarPermisos() {
-
-        int permisoSms = ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS);
-        int permisoAlmacenamiento = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-
-        if (permisoSms == PackageManager.PERMISSION_GRANTED && permisoAlmacenamiento == PackageManager.PERMISSION_GRANTED) {
-            //Mensaje permisos aceptados
-
-
-        } else {
-            requestPermissions(new String[]{Manifest.permission.SEND_SMS, Manifest.permission.WRITE_EXTERNAL_STORAGE}, REQUEST_CODE);
-        }
-    }
-
 
     public void Iniciar(View view) {
 
@@ -130,8 +90,7 @@ public class MainActivity extends AppCompatActivity {
                         Intent home = new Intent(MainActivity.this, HomeUsuario.class);
                         startActivity(home);
                     } else {
-                        tvMensaje.setText("campos erroneos");
-                        Toast.makeText(MainActivity.this, "No se pudo inicar sesion, verifique correo y contraseña", Toast.LENGTH_SHORT).show();
+                        tvMensaje.setText("No se pudo inicar sesion, verifique correo y contraseña");
 
                     }
 

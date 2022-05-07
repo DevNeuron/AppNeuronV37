@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Cuba/AndroidStudioProjects/AppNeuronV37/app/src/main/res/layout/activity_cita.xml" value="0.25" />
+        <entry key="..\:/Users/Cuba/AndroidStudioProjects/AppNeuronV37/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Cuba/AndroidStudioProjects/AppNeuronV37/app/src/main/res/layout/activity_registrarse.xml" value="0.25" />
         <entry key="..\:/Users/Cuba/AndroidStudioProjects/AppNeuronV4/app/src/main/res/drawable/boton_blanco.xml" value="0.227" />
         <entry key="..\:/Users/Cuba/AndroidStudioProjects/AppNeuronV4/app/src/main/res/drawable/boton_custom.xml" value="0.227" />
         <entry key="..\:/Users/Cuba/AndroidStudioProjects/AppNeuronV4/app/src/main/res/layout/activity_home_usuario.xml" value="0.2" />

@@ -4,77 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo"
+    android:background="#79DAE8"
     tools:context=".Cita">
 
-    <Button
-        android:id="@+id/btCita"
+    <!--Seleccion de dia -->
+
+    <!--Seleccion de Hora -->
+
+    <EditText
+        android:id="@+id/etCita"
         android:layout_width="250sp"
-        android:layout_height="50sp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="44dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="269dp"
+        android:clickable="true"
+        android:focusable="false"
+        android:hint="Seleccione un día"
+        android:inputType="date"
+        android:maxLines="1"
         android:onClick="abrirCalendario"
-        android:text="ACCESO AL CALENDARIO"
         android:textAllCaps="false"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="250sp"
-        android:layout_height="35sp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="16dp"
-        android:text="Seleccione una fecha:"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="250sp"
-        android:layout_height="50sp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="131dp"
-        android:spinnerMode="dropdown"
-        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="250sp"
-        android:layout_height="35sp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="56dp"
-        android:text="Seleccione la especialidad :"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btHora"
-        android:layout_width="250sp"
-        android:layout_height="50sp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="162dp"
-        android:onClick="AbrirHora"
-        android:text="HORAS DISPONIBLES"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btCita" />
-
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="632dp"
-        android:layout_marginEnd="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logowhite" />
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/etHora"
+        android:layout_width="250sp"
+        android:layout_height="50sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="292dp"
+        android:clickable="true"
+        android:focusable="false"
+        android:hint="Seleccione una hora"
+        android:inputType="date"
+        android:maxLines="1"
+        android:onClick="AbrirHora"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etCita"
+        app:layout_constraintVertical_bias="0.906" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
