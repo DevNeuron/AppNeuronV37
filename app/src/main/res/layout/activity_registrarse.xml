@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondodos"
-    tools:context=".Registrarse">
+    tools:context=".InicioRegistro">
 
 
     <EditText
@@ -91,7 +91,7 @@
         android:layout_width="200sp"
         android:layout_height="50sp"
         android:layout_marginTop="50dp"
-        android:background="@drawable/boton_blanco"
+        android:background="@drawable/boton_custom"
         android:onClick="Registrar"
         android:text="Continue el Registro"
         app:layout_constraintEnd_toEndOf="parent"

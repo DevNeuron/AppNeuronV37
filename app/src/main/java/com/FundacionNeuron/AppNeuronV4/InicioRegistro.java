@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class Registrarse extends AppCompatActivity {
+public class InicioRegistro extends AppCompatActivity {
 
     EditText etNombre, etApellidos, etCorreo, etMiContraseña, etMiContraseña2, etTelefono;
     TextView mensajeError;
@@ -112,12 +112,12 @@ public class Registrarse extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
-                        Intent login = new Intent(Registrarse.this, MainActivity.class );
+                        Intent login = new Intent(InicioRegistro.this, MainActivity.class );
                         startActivity(login);
-                        Toast.makeText(Registrarse.this, "Se ha registado correctamente", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(InicioRegistro.this, "Se ha registado correctamente", Toast.LENGTH_SHORT).show();
                     }else{
                         mensajeError.setText("");
-                        Toast.makeText(Registrarse.this, "No se puede registrar, verifique que todo esta correctamente", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(InicioRegistro.this, "No se puede registrar, verifique que todo esta correctamente", Toast.LENGTH_SHORT).show();
                     }
                 }
             });

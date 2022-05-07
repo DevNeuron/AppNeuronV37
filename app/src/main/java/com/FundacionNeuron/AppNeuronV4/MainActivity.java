@@ -14,7 +14,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -118,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void Registrar(View view) {
 
-        Intent registrar = new Intent(this, Registrarse.class);
+        Intent registrar = new Intent(this, InicioRegistro.class);
         startActivity(registrar);
 
     }
