@@ -3,11 +3,8 @@ package com.FundacionNeuron.AppNeuronV4;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -28,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText etUsuario, etContraseña;
     TextView tvMensaje;
-    Button btIniciar;
+    Button btIniciar,bRegistroNuevoUser;
     TextView neuron, btRegistrar;
     ImageView ibFace, ibInsta, IbTwit;
     private FirebaseAuth mAuth;
@@ -51,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
         etContraseña = findViewById(R.id.etContraseña);
         tvMensaje = findViewById(R.id.tvMensaje);
         btIniciar = findViewById(R.id.btIniciar);
-        btRegistrar = findViewById(R.id.btRegistrar);
+        bRegistroNuevoUser = findViewById(R.id.bRegistroNuevoUser);
+        btRegistrar=findViewById(R.id.btRegistrar);
         neuron = findViewById(R.id.neuron);
 
         neuron.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +59,13 @@ public class MainActivity extends AppCompatActivity {
 
                 Uri link = Uri.parse(url);
                 Intent i = new Intent(Intent.ACTION_VIEW, link);
+                startActivity(i);
+            }
+        });
+        bRegistroNuevoUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this,UsuarioPreguntasRegistro.class);
                 startActivity(i);
             }
         });
@@ -86,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
                         Toast.makeText(MainActivity.this, "Bienvenido", Toast.LENGTH_SHORT).show();
-                        Intent home = new Intent(MainActivity.this, HomeUsuario.class);
+                        Intent home = new Intent(MainActivity.this, UsuarioHome.class);
                         startActivity(home);
                     } else {
                         tvMensaje.setText("No se pudo inicar sesion, verifique correo y contraseña");
@@ -117,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void Registrar(View view) {
 
-        Intent registrar = new Intent(this, InicioRegistro.class);
+        Intent registrar = new Intent(this, UsuarioInicioRegistro.class);
         startActivity(registrar);
 
     }

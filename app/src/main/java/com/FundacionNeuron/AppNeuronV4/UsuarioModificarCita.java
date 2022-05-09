@@ -2,18 +2,17 @@ package com.FundacionNeuron.AppNeuronV4;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class ModificarCita extends AppCompatActivity {
+public class UsuarioModificarCita extends AppCompatActivity {
 Button bModificacion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_modificar_cita);
+        setContentView(R.layout.activity_usuario_modificar_cita);
         // implementando calendario
 
 

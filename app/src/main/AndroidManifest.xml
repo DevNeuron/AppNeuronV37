@@ -12,25 +12,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
-            android:name=".PreguntasRegistro"
+            android:name=".UsuarioFinalRegistro"
             android:exported="false" />
         <activity
-            android:name=".ModificarCita"
+            android:name=".UsuarioPreguntasRegistro"
             android:exported="false" />
         <activity
-            android:name=".ConsultaCita"
+            android:name=".UsuarioModificarCita"
+            android:exported="false" />
+        <activity
+            android:name=".UsuarioConsultaCita"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />
         <activity
-            android:name=".Cita"
+            android:name=".UsuarioCita"
             android:exported="false" />
         <activity
-            android:name=".HomeUsuario"
+            android:name=".UsuarioHome"
             android:exported="false" />
         <activity
-            android:name=".InicioRegistro"
+            android:name=".UsuarioInicioRegistro"
             android:exported="false" />
         <activity
             android:name=".Splash"

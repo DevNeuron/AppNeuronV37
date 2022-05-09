@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class InicioRegistro extends AppCompatActivity {
+public class UsuarioFinalRegistro extends AppCompatActivity {
 
     EditText etNombre, etApellidos, etCorreo, etMiContraseña, etMiContraseña2, etTelefono;
     TextView mensajeError;
@@ -39,7 +39,7 @@ public class InicioRegistro extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registrarse);
+        setContentView(R.layout.activity_usuario_registrar);
 
         etNombre = findViewById(R.id.etNombre);
         etApellidos = findViewById(R.id.etApellidos);
@@ -54,13 +54,14 @@ public class InicioRegistro extends AppCompatActivity {
     public void Registrar(View view){
 
         // Base de datos
-         db = FirebaseFirestore.getInstance();
-         //Autentificacion con correo y contraseña
-         mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
+        //Autentificacion con correo y contraseña
+        mAuth = FirebaseAuth.getInstance();
 
         String nombre = etNombre.getText().toString();
         String apellidos = etApellidos.getText().toString();
         String correo = etCorreo.getText().toString();
+        String correo2 = etCorreo2.getText().toString();
         String contraseña = etMiContraseña.getText().toString();
         String contraseña2 = etMiContraseña2.getText().toString();
 
@@ -69,6 +70,7 @@ public class InicioRegistro extends AppCompatActivity {
         user.put("Nombre", nombre);
         user.put("Apellidos", apellidos);
         user.put("Correo", correo);
+        user.put("CorreoDos", correo2);
         user.put("Contraseña", contraseña);
         user.put("ContraseñaDos", contraseña2);
 
@@ -81,12 +83,12 @@ public class InicioRegistro extends AppCompatActivity {
                         idDocumento = documentReference.getId();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(InicioRegistro.this, "Error", Toast.LENGTH_SHORT).show();
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(UsuarioFinalRegistro.this, "Error", Toast.LENGTH_SHORT).show();
 
-            }
-        });
+                    }
+                });
 
         if(nombre.isEmpty() && apellidos.isEmpty() && correo.isEmpty() && contraseña.isEmpty()){
             mensajeError.setText("Debes rellenar todos los campos");
@@ -116,12 +118,12 @@ public class InicioRegistro extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
-                        Intent login = new Intent(InicioRegistro.this, MainActivity.class );
+                        Intent login = new Intent(UsuarioFinalRegistro.this, MainActivity.class );
                         startActivity(login);
-                        Toast.makeText(InicioRegistro.this, "Se ha registado correctamente", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UsuarioFinalRegistro.this, "Se ha registado correctamente", Toast.LENGTH_SHORT).show();
                     }else{
                         mensajeError.setText("");
-                        Toast.makeText(InicioRegistro.this, "No se puede registrar, verifique que todo esta correctamente", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UsuarioFinalRegistro.this, "No se puede registrar, verifique que todo esta correctamente", Toast.LENGTH_SHORT).show();
                     }
                 }
             });

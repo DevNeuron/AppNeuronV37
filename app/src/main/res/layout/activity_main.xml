@@ -8,91 +8,18 @@
     tools:context="MainActivity">
 
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="368dp"
-        android:layout_height="230dp"
-        android:layout_marginTop="180dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/tvMensaje"
-            android:layout_width="match_parent"
-            android:layout_height="30sp"
-            android:textColor="#EB1C0D" />
-
-        <EditText
-            android:id="@+id/etUsuario"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="50sp"
-            android:drawableLeft="@drawable/icon_correo"
-            android:drawablePadding="10dp"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
-            android:textColor="#000000"
-            android:textColorHint="#000000"
-            android:textSize="16sp" />
-
-        <EditText
-            android:id="@+id/etContraseña"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="50sp"
-            android:layout_marginTop="10dp"
-            android:drawableLeft="@drawable/icon_candado"
-            android:drawablePadding="10dp"
-            android:hint="  Contraseña"
-            android:inputType="textPassword"
-            android:textColor="#000000"
-            android:textColorHint="#000000"
-            android:textSize="16sp" />
-
-        <Button
-            android:id="@+id/btIniciar"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/boton_blanco"
-            android:onClick="Iniciar"
-            android:text="Iniciar"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/btRegistrar"
-        android:layout_width="93dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="78dp"
-        android:onClick="Registrar"
-        android:text="Registrar"
-        android:textColor="#045392"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView11"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="192dp"
         android:layout_height="31dp"
         android:layout_marginStart="32dp"
-        android:layout_marginBottom="23dp"
         android:text="Tambien puedes visitarnos en "
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
 
     <TextView
         android:id="@+id/neuron"
@@ -100,38 +27,138 @@
         android:layout_height="31dp"
         android:layout_marginStart="7dp"
         android:layout_marginEnd="56dp"
-        android:layout_marginBottom="24dp"
         android:text="Fundación Neuron"
         android:textAlignment="center"
         android:textColor="#052AF5"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/textView" />
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
 
     <ImageView
         android:id="@+id/imageView8"
         android:layout_width="300dp"
         android:layout_height="80dp"
         android:layout_marginStart="108dp"
-        android:layout_marginTop="168dp"
-        android:layout_marginBottom="56dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btRegistrar"
+        app:layout_constraintTop_toBottomOf="@+id/bRegistroNuevoUser"
         app:srcCompat="@drawable/logowhite" />
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="142dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="59dp"
-        android:layout_marginTop="10dp"
-        android:text="¿No tienes cuenta?"
-        android:textSize="16sp"
+        android:layout_width="325dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="30dp"
+        android:text="¿Eres usuario Neuron pero no tienes cuenta?"
         android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/etContraseña" />
+
+    <TextView
+        android:id="@+id/btRegistrar"
+        android:layout_width="75dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginEnd="168dp"
+        android:onClick="Registrar"
+        android:paddingLeft="0dp"
+        android:text="Registrate"
+        android:textColor="#045392"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/etUsuario"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="300sp"
+        android:layout_height="50sp"
+        android:layout_marginStart="30dp"
+        android:drawableLeft="@drawable/icon_correo"
+        android:drawablePadding="10dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMensaje" />
+
+    <EditText
+        android:id="@+id/etContraseña"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="300sp"
+        android:layout_height="50sp"
+        android:layout_marginStart="30dp"
+        android:drawableLeft="@drawable/icon_candado"
+        android:drawablePadding="10dp"
+        android:hint="  Contraseña"
+        android:inputType="textPassword"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etUsuario" />
+
+    <TextView
+        android:id="@+id/tvMensaje"
+        android:layout_width="300sp"
+        android:layout_height="30sp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:textColor="#EB1C0D"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/btIniciar"
+        android:layout_width="300sp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/design_default_color_secondary"
+        android:onClick="Iniciar"
+        android:text="Iniciar"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btRegistrar" />
+
+    <Button
+        android:id="@+id/bRegistroNuevoUser"
+        android:layout_width="300sp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/design_default_color_secondary"
+        android:onClick="Iniciar"
+        android:text="Registrar nuevo usuario"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btIniciar" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="200sp"
+        android:layout_height="200sp"
+        android:layout_marginTop="28dp"
+        android:src="@drawable/login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

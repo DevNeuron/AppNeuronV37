@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondodos"
-    tools:context=".InicioRegistro">
+    android:background="@drawable/fondo"
+    tools:context=".UsuarioInicioRegistro">
 
 
     <EditText
@@ -91,9 +91,10 @@
         android:layout_width="200sp"
         android:layout_height="50sp"
         android:layout_marginTop="50dp"
-        android:background="@drawable/boton_custom"
+        android:background="@drawable/boton_blanco"
         android:onClick="Registrar"
         android:text="Continue el Registro"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
