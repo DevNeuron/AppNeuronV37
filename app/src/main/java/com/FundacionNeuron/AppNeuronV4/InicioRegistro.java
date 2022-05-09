@@ -75,12 +75,12 @@ public class InicioRegistro extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
-                        Toast.makeText(Registrarse.this, "sE HAN GUARDADO SUS DATOS CORRECTAMENTE", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(InicioRegistro.this, "sE HAN GUARDADO SUS DATOS CORRECTAMENTE", Toast.LENGTH_SHORT).show();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(Registrarse.this, "Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(InicioRegistro.this, "Error", Toast.LENGTH_SHORT).show();
             }
         });
 

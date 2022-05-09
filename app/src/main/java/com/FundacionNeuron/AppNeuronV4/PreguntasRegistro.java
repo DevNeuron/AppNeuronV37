@@ -9,6 +9,6 @@ public class PreguntasRegistro extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_preuguntas_registro);
+        setContentView(R.layout.activity_preguntas_registro);
     }
 }
