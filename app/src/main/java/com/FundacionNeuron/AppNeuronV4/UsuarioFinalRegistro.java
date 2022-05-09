@@ -25,7 +25,7 @@ import java.util.Map;
 
 public class UsuarioFinalRegistro extends AppCompatActivity {
 
-    EditText etNombre, etApellidos, etCorreo, etMiContraseña, etMiContraseña2, etTelefono;
+    EditText etNombre, etApellidos, etCorreo,etCorreo2, etMiContraseña, etMiContraseña2, etTelefono;
     TextView mensajeError;
     public static String idDocumento;
 
@@ -44,6 +44,7 @@ public class UsuarioFinalRegistro extends AppCompatActivity {
         etNombre = findViewById(R.id.etNombre);
         etApellidos = findViewById(R.id.etApellidos);
         etCorreo = findViewById(R.id.etCorreo);
+        etCorreo2 = findViewById(R.id.etCorreo2);
         etMiContraseña = findViewById(R.id.etMiContraseña);
         etMiContraseña2 = findViewById(R.id.etMiContraseña2);
         mensajeError = findViewById(R.id.mensajeError);
