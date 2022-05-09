@@ -27,6 +27,8 @@ public class InicioRegistro extends AppCompatActivity {
 
     EditText etNombre, etApellidos, etCorreo, etMiContraseña, etMiContraseña2, etTelefono;
     TextView mensajeError;
+    public static String idDocumento;
+
     // FireBase
     FirebaseAuth mAuth;
 
@@ -75,12 +77,14 @@ public class InicioRegistro extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
-                        Toast.makeText(Registrarse.this, "sE HAN GUARDADO SUS DATOS CORRECTAMENTE", Toast.LENGTH_SHORT).show();
+                        System.out.println(documentReference.getId());
+                        idDocumento = documentReference.getId();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(Registrarse.this, "Error", Toast.LENGTH_SHORT).show();
+                Toast.makeText(InicioRegistro.this, "Error", Toast.LENGTH_SHORT).show();
+
             }
         });
 

@@ -17,6 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -30,6 +32,8 @@ public class Cita extends AppCompatActivity {
 
     EditText etCita, etHora;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+
 
 
 
@@ -66,12 +70,27 @@ public class Cita extends AppCompatActivity {
 
                 db = FirebaseFirestore.getInstance();
 
+                DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+
+
                 Map<String, Object> dias = new HashMap<>();
                 dias.put("Dia", fecha);
 
-               String id =  db.collection("user").getId();
+                db.collection("user").document(InicioRegistro.idDocumento)
+                        .update(dias)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                Toast.makeText(Cita.this, "Se a añadidoc correctamente", Toast.LENGTH_SHORT).show();
 
-                Toast.makeText(Cita.this, id, Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(Cita.this, "nO se a podido añadir", Toast.LENGTH_SHORT).show();
+                            }
+                        });
 
                 etCita.setText(fecha);
 
