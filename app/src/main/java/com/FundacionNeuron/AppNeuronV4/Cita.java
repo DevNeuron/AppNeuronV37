@@ -70,7 +70,7 @@ public class Cita extends AppCompatActivity {
 
                 db = FirebaseFirestore.getInstance();
 
-                //Dtos qwe se guardane en registro de la base de datos
+                //Datos qwue se guarda  en registro de la base de datos
                 DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
 
                 Map<String, Object> dias = new HashMap<>();
