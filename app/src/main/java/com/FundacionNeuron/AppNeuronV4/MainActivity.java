@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText etUsuario, etContraseña;
     TextView tvMensaje;
-    Button btIniciar,bRegistroNuevoUser;
+    Button btIniciar;
     TextView neuron, btRegistrar;
     ImageView ibFace, ibInsta, IbTwit;
     private FirebaseAuth mAuth;
@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         etContraseña = findViewById(R.id.etContraseña);
         tvMensaje = findViewById(R.id.tvMensaje);
         btIniciar = findViewById(R.id.btIniciar);
-        bRegistroNuevoUser = findViewById(R.id.bRegistroNuevoUser);
+
         btRegistrar=findViewById(R.id.btRegistrar);
         neuron = findViewById(R.id.neuron);
 
@@ -62,13 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        bRegistroNuevoUser.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this,UsuarioPreguntasRegistro.class);
-                startActivity(i);
-            }
-        });
+
 
     }
 

@@ -12,12 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
-            android:name=".UsuarioFinalRegistro"
-            android:exported="false" />
-        <activity
-            android:name=".UsuarioPreguntasRegistro"
-            android:exported="false" />
-        <activity
             android:name=".UsuarioModificarCita"
             android:exported="false" />
         <activity

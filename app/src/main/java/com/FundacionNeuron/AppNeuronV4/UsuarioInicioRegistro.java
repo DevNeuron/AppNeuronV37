@@ -51,47 +51,34 @@ public class UsuarioInicioRegistro extends AppCompatActivity {
 
     }
 
-    public void Registrar(View view){
 
+
+    public void Registrar(View view){
+        Comprobacion();
+
+
+    }
+
+    public void Comprobacion(){
         // Base de datos
-         db = FirebaseFirestore.getInstance();
-         //Autentificacion con correo y contraseña
-         mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
+
+        //Autentificacion con correo y contraseña
+        mAuth = FirebaseAuth.getInstance();
 
         String nombre = etNombre.getText().toString();
         String apellidos = etApellidos.getText().toString();
         String correo = etCorreo.getText().toString();
         String contraseña = etMiContraseña.getText().toString();
         String contraseña2 = etMiContraseña2.getText().toString();
+        //No estaba el telefono
+        String telefono = etTelefono.getText().toString();
 
-        //Mapa para guardar una coleccion de datos en la base de datos
-        Map<String, Object> user = new HashMap<>();
-        user.put("Nombre", nombre);
-        user.put("Apellidos", apellidos);
-        user.put("Correo", correo);
-        user.put("Contraseña", contraseña);
-        user.put("ContraseñaDos", contraseña2);
-
-        db.collection("user")
-                .add(user)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        System.out.println(documentReference.getId());
-                        idDocumento = documentReference.getId();
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(UsuarioInicioRegistro.this, "Error", Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
-        if(nombre.isEmpty() && apellidos.isEmpty() && correo.isEmpty() && contraseña.isEmpty()){
+        //Comprobacion de campos vacios
+        if(nombre.isEmpty() && apellidos.isEmpty() && correo.isEmpty() && contraseña.isEmpty() && contraseña2.isEmpty()){
             mensajeError.setText("Debes rellenar todos los campos");
 
-        }else if(nombre.isEmpty()){
+        } else if(nombre.isEmpty()){
             mensajeError.setText("Debes rellenar todos los campos");
 
         }else if(apellidos.isEmpty()){
@@ -109,31 +96,56 @@ public class UsuarioInicioRegistro extends AppCompatActivity {
         }else if(etTelefono.getText().toString().length()==0) {
             mensajeError.setText("Debes rellenar todos los campos");
 
-        }else if (!contraseña.equals(contraseña2)){
+        } if (!contraseña.equals(contraseña2)){
             mensajeError.setText("Las contraseñas deben de ser iguales");
-        }else{
-            mAuth.createUserWithEmailAndPassword(correo, contraseña).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+
+            // Si todo esta correcto se logea el usuario con correo y contraseña
+        } else{
+            //Mapa para guardar una coleccion de datos en la base de datos
+            Map<String, Object> user = new HashMap<>();
+            user.put("Nombre", nombre);
+            user.put("Apellidos", apellidos);
+            user.put("Correo", correo);
+            user.put("Telf",telefono );
+            user.put("Contraseña", contraseña);
+            // nose porque guardamos la contraseña otra vez
+            // Aunque la contraseña no coincida se guarda en la base de datos
+            user.put("ContraseñaDos", contraseña2);
+
+            // Usamos el nombre del mapa para crear una coleccion
+
+            db.collection("user")
+                    .add(user)
+                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                        @Override
+                        public void onSuccess(DocumentReference documentReference) {
+                            System.out.println(documentReference.getId());
+                            idDocumento = documentReference.getId();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(UsuarioInicioRegistro.this, "Error", Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+
+            mAuth.createUserWithEmailAndPassword(correo, (contraseña)).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if(task.isSuccessful()){
+
                         Intent login = new Intent(UsuarioInicioRegistro.this, MainActivity.class );
                         startActivity(login);
                         Toast.makeText(UsuarioInicioRegistro.this, "Se ha registado correctamente", Toast.LENGTH_SHORT).show();
                     }else{
                         mensajeError.setText("");
+
                         Toast.makeText(UsuarioInicioRegistro.this, "No se puede registrar, verifique que todo esta correctamente", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
 
         }
-
-
     }
-
-
-
-
-
-
 }

@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Cuba/AndroidStudioProjects/AppNeuronV37 - copia/app/src/main/res/drawable/boton_blanco.xml" value="0.1" />
+        <entry key="..\:/Users/Cuba/AndroidStudioProjects/AppNeuronV37 - copia/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Cuba/AndroidStudioProjects/AppNeuronV37 - copia/app/src/main/res/layout/activity_usuario_cita.xml" value="0.25" />
+        <entry key="..\:/Users/Cuba/AndroidStudioProjects/AppNeuronV37 - copia/app/src/main/res/layout/activity_usuario_consulta_cita.xml" value="0.33" />
+        <entry key="..\:/Users/Cuba/AndroidStudioProjects/AppNeuronV37 - copia/app/src/main/res/layout/activity_usuario_final_registro.xml" value="0.25" />
+        <entry key="..\:/Users/Cuba/AndroidStudioProjects/AppNeuronV37 - copia/app/src/main/res/layout/activity_usuario_registrar.xml" value="0.25" />
+        <entry key="..\:/Users/Cuba/AndroidStudioProjects/AppNeuronV37/app/src/main/res/layout/activity_cita.xml" value="0.11" />
+        <entry key="..\:/Users/Cuba/AndroidStudioProjects/AppNeuronV37/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Cuba/AndroidStudioProjects/AppNeuronV4/app/src/main/res/drawable/boton_blanco.xml" value="0.227" />
         <entry key="..\:/Users/Cuba/AndroidStudioProjects/AppNeuronV4/app/src/main/res/drawable/boton_custom.xml" value="0.227" />
         <entry key="..\:/Users/Cuba/AndroidStudioProjects/AppNeuronV4/app/src/main/res/layout/activity_home_usuario.xml" value="0.2" />
@@ -29,5 +37,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.11" />
+      </ProjectState>
+    </option>
   </component>
 </project>

@@ -4,6 +4,8 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
@@ -21,17 +23,17 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TimeZone;
 
 
 public class UsuarioCita extends AppCompatActivity {
 
 
     EditText etCita, etHora;
+    DatePicker viewDate;
+
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-
-
-
+    DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +41,8 @@ public class UsuarioCita extends AppCompatActivity {
         setContentView(R.layout.activity_usuario_cita);
 
 
-       etCita = findViewById(R.id.etCita);
-       etHora = findViewById(R.id.etHora);
+        etCita = findViewById(R.id.etCita);
+        etHora = findViewById(R.id.etHora);
 
     }
 
@@ -48,14 +50,9 @@ public class UsuarioCita extends AppCompatActivity {
     public void abrirCalendario(View view){
 
         Calendar calendario = Calendar.getInstance();
-
-
-
         int anio = calendario.get(Calendar.YEAR);
         int mes = calendario.get(Calendar.MONTH);
         int dia = calendario.get(Calendar.DAY_OF_MONTH);
-
-
 
 
         DatePickerDialog datePickerDialog = new DatePickerDialog(UsuarioCita.this, new DatePickerDialog.OnDateSetListener() {
@@ -66,8 +63,8 @@ public class UsuarioCita extends AppCompatActivity {
 
                 db = FirebaseFirestore.getInstance();
 
-                //Datos qwue se guarda  en registro de la base de datos
-                DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+                //Datos que se guarda  en registro de la base de datos
+                 mDatabase = FirebaseDatabase.getInstance().getReference();
 
                 Map<String, Object> dias = new HashMap<>();
                 dias.put("Dia", fecha);
@@ -112,11 +109,36 @@ public class UsuarioCita extends AppCompatActivity {
             @Override
             public void onTimeSet(TimePicker timePicker, int hourOfDay, int minute) {
 
-                String dia =hourOfDay + ":" + minute;
-                etHora.setText(dia);
+                String hora =hourOfDay + ":" + minute;
+                db = FirebaseFirestore.getInstance();
+                //Datos qwue se guarda  en registro de la base de datos
+                mDatabase = FirebaseDatabase.getInstance().getReference();
+
+                Map<String, Object> Lashora = new HashMap<>();
+                Lashora.put("Hora", hora);
+
+                db.collection("user").document(UsuarioInicioRegistro.idDocumento)
+                        .update(Lashora)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                Toast.makeText(UsuarioCita.this, "La hora s eha guardado correctamente", Toast.LENGTH_SHORT).show();
+
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(UsuarioCita.this, "No se a podido guardar la hora", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                etHora.setText(hora);
+
+
 
             }
         }, hora, min, false);
+
         time.show();
 
     }
